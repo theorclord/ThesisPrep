@@ -1,0 +1,90 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[vmargin=3.5cm, top=2cm]{geometry}
+\usepackage[linktocpage=true]{hyperref}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[section]{placeins}
+\usepackage{listings}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\newcommand{\tmtable}{\begin{longtable}{ p{2.7cm} p{10cm} }}
+\newcommand{\tmtableend}{\end{longtable}}
+
+\begin{document}
+\lstset{language=C}  
+\begin{titlepage}
+
+\centering \parindent=0pt
+\newcommand{\HRule}{\rule{\textwidth}{1mm}}
+\vspace*{\stretch{1}} \HRule\\[1cm]\large\bfseries
+Bar chart game using evolutionary programming and open data\\[0.7cm]
+\large Bachelor Project\\[1cm]
+\HRule\\[1cm]
+
+%\begin{figure}[h]
+%	\centering
+%    \includegraphics[width=1\textwidth]{Images/FrontPage.jpg}
+%    \label{fig:frontPage}
+%\end{figure}
+\large by 
+\\Mikkel Stolborg (msto@itu.dk)
+\vspace*{\stretch{2}} \normalsize
+\begin{flushleft}
+IT University of Copenhagen \\
+Supervisor\\
+Julian Togelius\\
+\today \end{flushleft}
+\end{titlepage}
+
+\begin{abstract}
+
+\end{abstract}
+\pagebreak
+\tableofcontents
+\pagebreak
+\section{Introduction}
+
+\section{Problem statement}
+Board games have limited space of play in accordance to the fact they are based on more or less static content. Our idea is to overcome this by exploring the creation of a hybrid board game  with app integration, using Procedural Content Generation (PCG) to create a dynamic and ever-changing experience.
+
+In the classical sense, board games has been about being analog. What we hope to do with this thesis, is to incorporate the digital into the analog world of board games. By doing so, we hope to close the gap between board games and digital games, and maybe open up the world to the possibility of mixing the digital with the analog. There has been some cases where the same concept has been explored before, i.e. X-com and Golem Arcana.
+
+We want to create a board game concurrent with the creation of an app which is designed to be coherent with the boardgame. By using PCG we are hoping that the board game will feel as though it adapts itself according to the players' actions, giving it a sense of unpredictability and potentially infinite replay value. In that way, the application will not be a classical "board game supporting" application, but rather the central element of said board game.
+
+Some of the challenges that lie before us, is to find relevant information about already existing solutions and implementations which deals with subjects which are similar to our project. 
+Another challenge in itself is to come up with the concept of a new board game that will be made from scratch. It must be engaging to the players, they should want to explore the game, and they should feel that they want to come back for more.
+\section{Schedule}
+
+
+\section{Procedural Content Generation for GDL Descriptions of Simplified Boardgames}
+\subsection{Summary}
+This article describes procedurally generated board games based on a simple chess-like structure. 
+Using evolutionary search-based algorithms to generate games and rules for them. 
+They test their games using a min-max algorithm and use the result for generating the next batch of games.
+
+\subsection{Relation}
+In relation to our topic the article deals with generating new board games, a task we set out to, and deals with the construction of new rules. 
+However they deal with generating games procedurally, rather than the content for the game. 
+The idea of generating an entire game based on a simple subset of rules is relate-able to the task of generating content based on rules as the player moves along. 
+\pagebreak
+
+\section{Experience-Driven Procedural Content Generation}
+\pagebreak
+\bibliography{sources}{}
+\bibliographystyle{plain}
+
+\pagebreak
+
+
+\end{document}
