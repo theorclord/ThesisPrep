@@ -28,8 +28,8 @@
 \centering \parindent=0pt
 \newcommand{\HRule}{\rule{\textwidth}{1mm}}
 \vspace*{\stretch{1}} \HRule\\[1cm]\large\bfseries
-Bar chart game using evolutionary programming and open data\\[0.7cm]
-\large Bachelor Project\\[1cm]
+Thesis prep individual hand-in\\[0.7cm]
+%\large Bachelor Project\\[1cm]
 \HRule\\[1cm]
 
 %\begin{figure}[h]
@@ -42,19 +42,12 @@ Bar chart game using evolutionary programming and open data\\[0.7cm]
 \vspace*{\stretch{2}} \normalsize
 \begin{flushleft}
 IT University of Copenhagen \\
-Supervisor\\
-Julian Togelius\\
+%Supervisor\\
+%Julian Togelius\\
 \today \end{flushleft}
 \end{titlepage}
 
-\begin{abstract}
-
-\end{abstract}
 \pagebreak
-\tableofcontents
-\pagebreak
-\section{Introduction}
-
 \section{Problem statement}
 Board games have limited space of play in accordance to the fact they are based on more or less static content. Our idea is to overcome this by exploring the creation of a hybrid board game  with app integration, using Procedural Content Generation (PCG) to create a dynamic and ever-changing experience.
 
@@ -64,23 +57,140 @@ We want to create a board game concurrent with the creation of an app which is d
 
 Some of the challenges that lie before us, is to find relevant information about already existing solutions and implementations which deals with subjects which are similar to our project. 
 Another challenge in itself is to come up with the concept of a new board game that will be made from scratch. It must be engaging to the players, they should want to explore the game, and they should feel that they want to come back for more.
-\section{Schedule}
 
+\section{Schedule}
+%\begin{table}[h]
+%\centering
+\begin{tabular}{|c|l|l|l|}
+\hline
+Date & Task & Milestone & Comments / Notes\\
+\hline
+01/02/2016 & Startup meeting, setting & Initial setup phase & Keep taking notes\\
+& up final workspace &  &  as we go\\
+& (Slack, git, drive, trello) & & \\
+\hline
+08/02/2016 & & Core gameplay mechanics,& Game Design doc \\
+ & &  ideas and concept & \\
+\hline
+14/02/2016 & & Prototyping interactions & What are the users\\
+& & user/app & going to do with the app?\\
+\hline
+21/02/2016 & & Prototyping connection & How to pass information \\ 
+& & app/game & between app and game?\\
+\hline
+28/02/2016 & & Working app prototype& \\
+& &  with paper prototype & \\
+\hline
+29/02/2016 & Playtest loop (1 week) & & Keep updating based \\	
+& & & on feedback\\
+\hline
+06/03/2016 & App update finalization, & 2nd Large scope & \\
+& &  prototype iteration & \\
+ &  board game optimization & & \\
+\hline
+07/03/2016 & Playtest loop (1 week) &  & Keep updating based \\
+& & & on feedback\\
+\hline
+13/03/2016 & App update finalization,& Playtest done & \\
+&  board game optimization & & \\
+\hline
+20/03/2016 &  & Alpha Deadline & Feature lock\\
+\hline
+31/03/2016 &  & Beta Release and testing & \\
+\hline
+04/04/2016 & Playtest loop (1 week) &  & \\
+\hline
+11/04/2016 & Bugfixing and polish &  & \\
+\hline
+18/04/2016 & Playtest loop (1 week) &  & \\
+\hline
+30/04/2016 &  & Game deadline, Focus report &\\
+\hline
+20/05/2016 &  & Report done & \\
+\hline
+... &  & Review and update & \\
+\hline
+01/06/2016 &  & Hand-in & \\
+\hline
+\end{tabular}
+
+%\end{table}
+
+\pagebreak
 
 \section{Procedural Content Generation for GDL Descriptions of Simplified Boardgames}
 \subsection{Summary}
-This article describes procedurally generated board games based on a simple chess-like structure. 
-Using evolutionary search-based algorithms to generate games and rules for them. 
-They test their games using a min-max algorithm and use the result for generating the next batch of games.
+This article examines generating board games, with rules based on simple chess-like structure, using an evolutionary algorithm.
+The article first introduces General Game Playing, a concept which focusses on creating programs which can play any game described by the General Descriptive language.
+The Game Descriptive Language (GDL) is a logical declarative language which is meant to be used as a general basis for the programs mentioned above.
 
-\subsection{Relation}
-In relation to our topic the article deals with generating new board games, a task we set out to, and deals with the construction of new rules. 
-However they deal with generating games procedurally, rather than the content for the game. 
-The idea of generating an entire game based on a simple subset of rules is relate-able to the task of generating content based on rules as the player moves along. 
+The article deals with simplified board games, with simplified board games stated in the article\cite{simpboard} as:
+\begin{quote}
+\textit{Simplified boardgames describes rectangular board, turn-based, 2-player, zero-sum games with pieces movements being a subset of a regular language.}
+\end{quote}
+This category of games can describe games such as chess, checkers, and fairy chess. 
+
+The game generation in the article focusses on a version of simplified board games, namely a simplified chess subset. 
+They use an evolutionary search based algorithm to find a game generated with their chosen subspace of simplified boardgames. They create an initial population of pieces and through crossover and mutation tries to optimize towards a game which can be played, is fair, requires skill to achieve victory, and more.
+In order to test for the skill requirement they use a min-max algorithm to play the game against a random algorithm. The higher the win-lose ratio for the min-max algorithm is, the less random chance has a factor. 
+The balance factor is determined by having two min-max algorithms compete against each other. If the win lose ratio is about a half, the game is fair. 
+The playability of the game is simply tested by if the game reach a conclusion within a certain time limit. 
+
+The results of their experiments is a population of games which were able to attain a larger fitness value. The most difficult thing to optimize were the complexity of the game, ensuring the rules were not to simple, and the 	reducibility, which is a measure for how important each piece is. 
+
+They present an asymmetrical game as an interesting result of their algorithm. The note themselves that it is interesting to be able to generate an asymmetrical game, given that many, if not all, games usually works on the principle of symmetry. 
+
+\subsection{Relevance}
+This article deals with the generation of boardgames, whilst we are trying to make a boardgame with a generation tool integrated in it. 
+Whilst the generation of boardgames is not of interest, the fitness function and thoughts about the evaluation of the game, might be of interest in evaluating the generation of content for our board game.
+
+Our game will be generating the content dynamically, many of the strategies used in the article will not be applicable in our relation, because they require to much computation to complete. 
+
 \pagebreak
 
 \section{Experience-Driven Procedural Content Generation}
+\subsection{Summary}
+This article deals with connecting content generation to input from its players. It explores different approaches to data collection from its players to build a model for the content generation.
+It explores in particular a Subjective, Objective, and GamePlay-based approaches to data collection. 
+The subjective approach deals with collecting data through questionnaires or through direct used feedback when playing. The latter being captured speech throughout the play experience.
+The objective approach is measuring different physical aspects of the player whilst playing the game, and linking the data to theories within gameplay to generate a model for when the player is excited or frustrated.
+The last approach is the GamePlay approach, which takes data from the game interactions the player executes. The time a player uses to overcome a challenge or the number of times the player needs to restart at a given checkpoint.
+Building a model from these approaches gives a player driven experience, which allows the algorithms to generate content more to the player liking and level of challenge. 
+\subsection{Relevance}
+The articles focus in relation to player driven procedural content generation is directly relate-able to our project. Using the terminology of the article, we would be using GamePlay driven player experience model. In our test and development we would most likely use a subjective tools as well to examine whether the generated content felt like it was better suited for them, than for other players. 
+
+Our project will attempt to use dynamic procedural content generation. Unlike the article, which focusses on generation static content based on player input, we will need to estimate the players mood throughout the game. In most of their cases the talk about using search based evolutionary algorithms or just evolutionary computing to generate the content from the player model. This will not be feasible in our case, as the computing needed to generate more content dynamically, will give to great a delay as the change should be almost instantaneous. 
+This will most likely require us to use a different approach to the content generation in the final game, however, some of the initial prototype test could in theory use some sort of evolutionary algorithm for generating content based on player input from playtest. 
 \pagebreak
+\section{Procedural generation of dungeons}
+\subsection{Summary}
+This article deals with the generation of dungeons using procedural content generation and explores a wealth of possible solutions to this task.
+The look through several cases of dungeon generation and examines how appropriate the chosen algorithm were for the given task and how well it can be applied in general. 
+
+The article touches on Cellular Automata for dungeon generation with cave like structure. The Cellular Automata is a self-organizing structure, which from a generated start frame iterates through base rules of neighbouring fields, to create a organic cave like map. The strengths of the algorithm is noted to be the ability to create virtually infinite dungeons, however the weaknesses is noted to be very little control of the outcome from base parameters, leading to a structure which cannot guarantee any specific rooms or other gameplay features.
+
+The article also concerns itself with generative grammar and in particular graph grammar. Here there is talk of setting together objectives for the player to achieve and the order of which the must be accomplished. This is useful for ensuring a structure in the dungeon that you seek is maintained. However, in order to generate a dungeon from the graph, a specialized dungeon generator is required each time. 
+
+Another mayor topic of the article is genetic algorithms. Genetic algorithms uses search-based evolutionary algorithms in order to find the solution which best fit a certain criteria. It stores its solution in a shortened form, which each time generates the same output. 
+They examine the use of this approach in several use cases. The general feature for each of them is the uses of a shortened version of the final product in a gene. The gene is achieved through the use of evolutionary algorithms and an accompanying fitness function. The several iterations the most fit solution is found with the use of the fitness function. 
+The strength of the genetic algorithm approach is the variety which can be generated at ease once the algorithm is created. This allows for the generation of several dungeons from just one set of constraints. The draw back of the genetic algorithm is the identification and construction of a fitness function. The fitness function steers the evolution towards a desired goal, and creating a function which ensures the desired goal is met, is difficult. 
+
+Last mayor topic which is touched upon in the article is a constrained based 3D dungeon generation. The generation creates a 3D graph with constraints between the node being distance and adjacencies. The advantage of this approach is that important features can be defined first and the rest can be generated around them. 
+The disadvantage of this approach is that gameplay data is not captured as easily in constraints such as distance and adjacencies.
+
+Finally the article goes through a mixed set of approaches. These are either a hybrid solution or a look at something which generates something which can be translated into a dungeon. 
+
+Noteworthy conclusions of the article is the tendency to focus on generating 2D dungeons over 3D dungeons. They observe the increased difficulty with the addition of the extra dimension, which is not easily overcome using the available algorithms. 
+Other limits include that the tools used would be inefficient in generating content dynamically, as the load of the algorithms would be a to great effect on performance.
+
+\subsection{Relevance}
+As our project is going to deal with the continuous generation of a board game, this is easily relate-able to the generation of 2D dungeons. The ideas and approaches in this article are noteworthy to our project, in the different ways they attempt the same thing. 
+
+Though none of the approaches deals with dynamic generation of content, the ideas can be translated and used even though the objective is different.
+
+As we are dealing with a boardgame, our dungeon generation will be limited by the items available in the board game. Our problem could be linked to 
+
+
 \bibliography{sources}{}
 \bibliographystyle{plain}
 
