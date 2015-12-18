@@ -120,8 +120,8 @@ Date & Task & Milestone & Comments / Notes\\
 
 \section{Procedural Content Generation for GDL Descriptions of Simplified Boardgames}
 \subsection{Summary}
-This article examines generating board games, with rules based on simple chess-like structure, using an evolutionary algorithm.
-The article first introduces General Game Playing, a concept which focusses on creating programs which can play any game described by the General Descriptive language.
+This article\cite{simpboard} examines generating board games, with rules based on simple chess-like structure, using an evolutionary algorithm.
+The article first introduces General Game Playing, a concept which focusses on creating programs which can play any game described by the Game Descriptive language.
 The Game Descriptive Language (GDL) is a logical declarative language which is meant to be used as a general basis for the programs mentioned above.
 
 The article deals with simplified board games, with simplified board games stated in the article\cite{simpboard} as:
@@ -138,7 +138,7 @@ The playability of the game is simply tested by if the game reach a conclusion w
 
 The results of their experiments is a population of games which were able to attain a larger fitness value. The most difficult thing to optimize were the complexity of the game, ensuring the rules were not to simple, and the 	reducibility, which is a measure for how important each piece is. 
 
-They present an asymmetrical game as an interesting result of their algorithm. The note themselves that it is interesting to be able to generate an asymmetrical game, given that many, if not all, games usually works on the principle of symmetry. 
+They present an asymmetrical game as an interesting result of their algorithm. They note themselves that it is interesting to be able to generate an asymmetrical game, given that many, if not all, games usually works on the principle of symmetry. 
 
 \subsection{Relevance}
 This article deals with the generation of boardgames, whilst we are trying to make a boardgame with a generation tool integrated in it. 
@@ -150,21 +150,21 @@ Our game will be generating the content dynamically, many of the strategies used
 
 \section{Experience-Driven Procedural Content Generation}
 \subsection{Summary}
-This article deals with connecting content generation to input from its players. It explores different approaches to data collection from its players to build a model for the content generation.
+This article\cite{experience} deals with connecting content generation to input from its players. It explores different approaches to data collection from its players to build a model for the content generation.
 It explores in particular a Subjective, Objective, and GamePlay-based approaches to data collection. 
 The subjective approach deals with collecting data through questionnaires or through direct used feedback when playing. The latter being captured speech throughout the play experience.
 The objective approach is measuring different physical aspects of the player whilst playing the game, and linking the data to theories within gameplay to generate a model for when the player is excited or frustrated.
 The last approach is the GamePlay approach, which takes data from the game interactions the player executes. The time a player uses to overcome a challenge or the number of times the player needs to restart at a given checkpoint.
 Building a model from these approaches gives a player driven experience, which allows the algorithms to generate content more to the player liking and level of challenge. 
 \subsection{Relevance}
-The articles focus in relation to player driven procedural content generation is directly relate-able to our project. Using the terminology of the article, we would be using GamePlay driven player experience model. In our test and development we would most likely use a subjective tools as well to examine whether the generated content felt like it was better suited for them, than for other players. 
+The articles focus in relation to player driven procedural content generation is directly relatable to our project. Using the terminology of the article, we would be using GamePlay driven player experience model. In our test and development we would most likely use subjective tools as well to examine whether the generated content felt like it was better suited for them, than for other players. 
 
 Our project will attempt to use dynamic procedural content generation. Unlike the article, which focusses on generation static content based on player input, we will need to estimate the players mood throughout the game. In most of their cases the talk about using search based evolutionary algorithms or just evolutionary computing to generate the content from the player model. This will not be feasible in our case, as the computing needed to generate more content dynamically, will give to great a delay as the change should be almost instantaneous. 
 This will most likely require us to use a different approach to the content generation in the final game, however, some of the initial prototype test could in theory use some sort of evolutionary algorithm for generating content based on player input from playtest. 
 \pagebreak
 \section{Procedural generation of dungeons}
 \subsection{Summary}
-This article deals with the generation of dungeons using procedural content generation and explores a wealth of possible solutions to this task.
+This article\cite{dungeon} deals with the generation of dungeons using procedural content generation and explores a wealth of possible solutions to this task.
 The look through several cases of dungeon generation and examines how appropriate the chosen algorithm were for the given task and how well it can be applied in general. 
 
 The article touches on Cellular Automata for dungeon generation with cave like structure. The Cellular Automata is a self-organizing structure, which from a generated start frame iterates through base rules of neighbouring fields, to create a organic cave like map. The strengths of the algorithm is noted to be the ability to create virtually infinite dungeons, however the weaknesses is noted to be very little control of the outcome from base parameters, leading to a structure which cannot guarantee any specific rooms or other gameplay features.
@@ -184,17 +184,22 @@ Noteworthy conclusions of the article is the tendency to focus on generating 2D 
 Other limits include that the tools used would be inefficient in generating content dynamically, as the load of the algorithms would be a to great effect on performance.
 
 \subsection{Relevance}
-As our project is going to deal with the continuous generation of a board game, this is easily relate-able to the generation of 2D dungeons. The ideas and approaches in this article are noteworthy to our project, in the different ways they attempt the same thing. 
+As our project is going to deal with the continuous generation of a board game, this is easily relatable to the generation of 2D dungeons. The ideas and approaches in this article are noteworthy to our project, in the different ways they attempt the same thing. 
 
 Though none of the approaches deals with dynamic generation of content, the ideas can be translated and used even though the objective is different.
 
-As we are dealing with a boardgame, our dungeon generation will be limited by the items available in the board game. Our problem could be linked to 
+As we are dealing with a boardgame, our dungeon generation will be limited by the items available in the board game. Our problem could be linked to a dungeon generation where it is important to link pieces together according to goals and progress. 
+The article deals shortly with a dungeon generation based on small islands of game pieces. This could in theory be adapted to work in a dynamic process, having the current map as a context, then generating the correct set piece to ensure the goals can be completed. 
 
 
-\bibliography{sources}{}
-\bibliographystyle{plain}
+\begin{thebibliography}{1}
 
-\pagebreak
-
+\bibitem{simpboard}
+Jakub Kowalski and Marek Szykuła, \emph{Procedural Content Generation for GDL Descriptions of Simplified Boardgames}, Institute of Computer Science, University of Wrocław, Poland ,2015.
+\bibitem{experience}
+Georgios N. Yannakakis and Julian Togelius, \emph{Experience-Driven Procedural Content Generation}, Member, IEEE, 2011.
+\bibitem{dungeon}
+Roland van der Linden, Ricardo Lopes and Rafael Bidarra, \emph{Procedural generation of dungeons}, 2014.
+\end{thebibliography}
 
 \end{document}
